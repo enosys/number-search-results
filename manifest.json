@@ -1,0 +1,26 @@
+{
+  "name": "Number Search Results",
+  "version": "0.1",
+  "manifest_version": 2,
+  "description": "Numbers the search results in Google, Bing, and Yahoo.",
+  /*
+  "background": { "scripts": ["background-scripts/background.js"] },
+  "page_action": {
+      "default_icon": "icons/enabled-icon-19.png",
+      "default_title": "Number Search Results enabled"
+  },
+  */
+  "content_scripts": [
+    {
+      "matches": ["http://www.google.com/search?*",
+                  "https://www.google.com/search?*"],
+      "js":  ["libs/jquery-1.8.3.js", "content-scripts/google.js"]
+    }
+  ]
+  /*
+  "permissions": [
+    "tabs",
+    "storage"
+  ]
+  */
+}
